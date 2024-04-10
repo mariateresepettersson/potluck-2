@@ -70,4 +70,21 @@ const assignItems = function () {
         "hummus",
         "cookies"
     ];
+
+    const allGuests = document.querySelectorAll(".guest-list li");
+
+    for (let guest of allGuests) {
+        let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
+        let randomPotluckItem = potluckItems[randomPotluckIndex];
+
+        let listItem = document.createElement("li");
+        listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
+        assignedItems.append(listItem);
+        //To avoid assigning same dish multiple times    
+        potluckItems.splice(randomPotluckIndex, 1);
+    };
 }; 
+
+assignButton.addEventListener("click", function () {
+    assignItems();
+});
