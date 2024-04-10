@@ -46,6 +46,6 @@ const updateGuestCount = function () {
         addGuestButton.classList.add("hide");
         guestInput.classList.add("hide");
         guestInputLabel.classList.add("hide");
-        guestFull.classList.add("hide");
+        guestFull.classList.remove("hide");
     }
 };
