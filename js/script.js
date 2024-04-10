@@ -19,14 +19,16 @@ addGuestButton.addEventListener("click", function () {
     if (guest !== "") {
         // Create a variable called listItem and use document.createElement method to create a new list element
         const listItem = document.createElement("li");
-
         //Change the innerText of the listItem to the guest variable.
         listItem.innerText = guest;
         // Append the listItem to guestList so the new list element appears at the end of the list
-         guestList.appendChild(listItem);
-        
-        // Clear the input field after adding the guest to the list
-        guestInput.value = "";
+        guestList.append(listItem);
+        clearInput();
     }
-
 });
+
+//Clear the Input Box
+const clearInput = function () {
+    guestInput.value = "";
+};
+
